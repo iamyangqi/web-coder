@@ -1,0 +1,59 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# mock server
+mock/node_modules/
+mock/dist/
+# testing
+/coverage
+lib
+
+# production
+/dist
+
+# misc
+.DS_Store
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+dist
+
+.vscode/tasks.json
+*.orig
+
+# idea
+.idea/
+*.iml
+
+*.css.d.ts
+
+# vendor js lib
+dll/
+.cache-loader
+
+# webjar
+webjar/target
+webjar/src
+
+translations/json/**/*.json
+
+*.log
+.vscode
+t.html
+cytoscape.min.js
+.yalc
+yalc.lock
+.awcache
+
+# webpack
+dev.server.config.js
+
+ca.*
+server.crt
+server.csr
+server.key
+server.pem
