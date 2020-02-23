@@ -4,11 +4,8 @@ import * as React from 'react';
 import {observer as hookObserver} from 'mobx-react-lite';
 // @ts-ignore
 import {__RouterContext, RouteComponentProps} from 'react-router-dom';
-
-export enum Locales {
-    'zh' = 'zh',
-    'en' = 'en',
-}
+import {Locales, Themes} from "../interfaces/app";
+import appStore from "../stores/AppStore";
 
 export type NonRequired<T> = {
     [K in keyof T]?: T[K];
@@ -17,9 +14,9 @@ export type NonRequired<T> = {
 export const HISTORY = createBrowserHistory();
 
 export interface BaseInjectHookProps<T = any> extends NonRequired<RouteComponentProps> {
-    i18n?: i18n.i18n;
     t?: i18n.TFunction;
     locale?: Locales;
+    theme?: Themes;
 }
 
 export function useForceUpdate() {
@@ -49,8 +46,9 @@ export function baseInjectHook<T extends BaseInjectHookProps = BaseInjectHookPro
 (component: React.FunctionComponent<T>): React.FunctionComponent<T> {
     return hookObserver((props: T) => {
         const routerContext: RouteComponentProps = useRouter();
+        const theme = appStore.theme;
         const enhancedProps = Object.assign({}, props, routerContext,
-            {i18n, t: i18n.default.t.bind(i18n), locale: i18n.default.language as Locales});
+            {t: i18n.default.t, locale: i18n.default.language as Locales, theme});
         const render = component(enhancedProps);
         return render;
     });
