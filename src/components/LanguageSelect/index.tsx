@@ -8,11 +8,6 @@ import i18n from "i18next";
 
 const Option = Select.Option;
 
-/**
- * 切换主题
- * @param {SophonTheme} 需切换的主题
- * @param {(t: SophonTheme) => void} 切换主题后的回调
- */
 export function changeLocale(l: Locales) {
     console.log(l);
     appStore.setLocale(l);
@@ -21,8 +16,8 @@ export function changeLocale(l: Locales) {
 
 const LocaleSelect = baseInjectHook((props: BaseInjectHookProps) => {
     const themesTranslation = {
-        'zh': props.t!('Chinese'),
-        'en': props.t!('English'),
+        'zh': props.t!('App:Chinese'),
+        'en': props.t!('App:English'),
     }
 
     React.useEffect(() => {
@@ -39,7 +34,7 @@ const LocaleSelect = baseInjectHook((props: BaseInjectHookProps) => {
             {
                 Object.keys(Locales).map((key: Locales) => {
                     return (
-                        <Option value={key} key={key}>{i18n.t('Teest')}</Option>
+                        <Option value={key} key={key}>{themesTranslation[key]}</Option>
                     )
                 })
             }

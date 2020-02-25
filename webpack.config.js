@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ip = require('ip');
 const i18nPlugin = require('./plugins/i18next-detector-plugin');
-const i18nConfig = require('./src/translations/i18nConfig');
+const i18nConfig = require('./src/utils/i18nConfig');
 
 const ipAddress = ip.address();
 
@@ -74,6 +74,6 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new i18nPlugin(path.resolve(__dirname, './src/**/*.{ts,tsx}'),
-            path.resolve(__dirname, './src/translations'), i18nConfig.i18nScannerOptions)
+            path.resolve(__dirname, './translations'), i18nConfig.getI18nScannerOptions(['App']))
     ],
 }

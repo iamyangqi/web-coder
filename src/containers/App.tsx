@@ -23,7 +23,7 @@ const App = baseInjectHook((props: BaseInjectHookProps) => {
                 </section>
             </Header>
             <Layout className='content'>
-                <Sider>{i18n.t('TEST')}</Sider>
+                <Sider>{i18n.t('App:TEST')}</Sider>
                 <Content>Content</Content>
             </Layout>
             <Footer>{props.locale}</Footer>

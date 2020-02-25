@@ -21,8 +21,8 @@ export function changeTheme(t: Themes) {
 
 const ThemeSelect = baseInjectHook((props: BaseInjectHookProps) => {
     const themesTranslation = {
-        'dark': props.t!('dark THEME'),
-        'default': props.t!('default THEME'),
+        'dark': props.t!('App:dark THEME'),
+        'default': props.t!('App:default THEME'),
     }
 
     React.useEffect(() => {
@@ -38,7 +38,7 @@ const ThemeSelect = baseInjectHook((props: BaseInjectHookProps) => {
             {
                 Object.keys(Themes).map((key: Themes) => {
                     return (
-                        <Option value={key} key={key}>{i18n.t('Teest')}</Option>
+                        <Option value={key} key={key}>{themesTranslation[key]}</Option>
                     )
                 })
             }
