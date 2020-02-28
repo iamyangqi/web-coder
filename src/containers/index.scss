@@ -1,13 +1,23 @@
+@use '../themes/tm';
+
 .app {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 
   >.header {
-    height: 30px;
-    line-height: 30px;
+    height: auto;
+    line-height: initial;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
+    @include tm.themeify {
+      border-bottom: 1px solid tm.themed('border-color');
+    }
   }
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected {
+  border-bottom-color: transparent !important;
 }

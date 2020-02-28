@@ -8,6 +8,7 @@ import {Locales, Themes} from "../interfaces/app";
 import appStore from "../stores/AppStore";
 import {initReactI18next} from "react-i18next";
 import _unique from 'lodash/uniq';
+import { v1 as uuidv1} from 'uuid';
 
 export interface I18nNamespaceConfig {
     ns: string;
@@ -88,4 +89,16 @@ export function baseInjectHook<T extends BaseInjectHookProps = BaseInjectHookPro
         const render = component(enhancedProps);
         return render;
     });
+}
+
+export function nextEventLoop(fn: Function) {
+    setTimeout(fn);
+}
+
+export function uid() {
+    return uuidv1();
+}
+
+export function notUndefined(param: any) {
+    return param !== undefined;
 }

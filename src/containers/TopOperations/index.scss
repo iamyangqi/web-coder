@@ -1,0 +1,38 @@
+@use '../../themes/tm';
+
+$top_operations_height: 35px;
+
+.top-operations {
+  width: 100%;
+  height: $top_operations_height;
+  @include tm.themeify {
+    border: 1px solid tm.themed('border-color');
+  }
+
+  @include tm.themeify {
+    .ant-menu {
+      background: transparent;
+
+      &.ant-menu-horizontal {
+        height: $top_operations_height;
+        line-height: $top_operations_height;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.top-pop-menu {
+  &.ant-menu-submenu {
+    .ant-menu-item, .ant-menu-submenu-title {
+      font-size: 10px !important;
+      height: 32px !important;
+      line-height: 32px !important;
+      margin: 0 !important;
+    }
+  }
+}
+
+.ant-menu-submenu-popup {
+  margin-left: 20px;
+}

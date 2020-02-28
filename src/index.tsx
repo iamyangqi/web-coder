@@ -13,12 +13,27 @@ const i18nNsConfigs: I18nNamespaceConfig[] = [
         ns: 'App',
         lng: Locales.en,
         content: require('../translations/en/App.json'),
-    },
-    {
+    }, {
         ns: 'App',
         lng: Locales.zh,
         content: require('../translations/zh/App.json'),
-    },];
+    }, {
+        ns: 'Configs',
+        lng: Locales.en,
+        content: require('../translations/en/Configs.json'),
+    }, {
+        ns: 'Configs',
+        lng: Locales.zh,
+        content: require('../translations/zh/Configs.json'),
+    }, {
+        ns: 'Graph',
+        lng: Locales.en,
+        content: require('../translations/en/Graph.json'),
+    }, {
+        ns: 'Graph',
+        lng: Locales.zh,
+        content: require('../translations/zh/Graph.json'),
+    }];
 
 initI18nNext(i18nNsConfigs);
 

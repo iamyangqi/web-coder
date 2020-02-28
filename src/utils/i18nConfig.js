@@ -3,7 +3,7 @@ exports.getI18nScannerOptions = function (nss) {
     const result = {
         // debug: true,
         func: {
-            list: ['this.t', 'this.t!', 't', 'props.t', 'props.t!', 'this.props.t', 'this.props.t!', 'i18next.t', 'i18n.t', 'props.i18n!.t', 'this.translate'],
+            list: ['props.t', 'props.t!', 'i18n.t'],
             extensions: ['.ts', '.tsx'],
         },
         lngs: ['en', 'zh'],

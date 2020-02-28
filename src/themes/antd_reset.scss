@@ -57,6 +57,12 @@
     }
   }
 
+  .ant-layout-footer {
+    @include tm.themeify {
+      background-color: tm.themed('layout-background');
+    }
+  }
+
   .ant-layout-content {
     @include tm.themeify {
       background-color: tm.themed('component-background');
@@ -85,6 +91,12 @@
 
   .ant-menu-item {
     &:active {
+      @include tm.themeify {
+        background-color: tm.themed('item-background_active');
+      }
+    }
+
+    &-active {
       @include tm.themeify {
         background-color: tm.themed('item-background_active');
       }

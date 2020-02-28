@@ -1,0 +1,18 @@
+@use '../../themes/tm';
+
+.movable-menu-wrapper {
+  position: fixed;
+  min-width: 200px;
+  @include tm.themeify {
+    box-shadow: tm.themed('box-shadow1');
+  }
+
+  .ant-menu {
+    &-item {
+      height: 32px;
+      line-height: 32px;
+      margin: 0 !important;
+      font-size: 10px;
+    }
+  }
+}

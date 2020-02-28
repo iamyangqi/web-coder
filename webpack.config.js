@@ -74,6 +74,6 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new i18nPlugin(path.resolve(__dirname, './src/**/*.{ts,tsx}'),
-            path.resolve(__dirname, './translations'), i18nConfig.getI18nScannerOptions(['App']))
+            path.resolve(__dirname, './translations'), i18nConfig.getI18nScannerOptions(['App', 'Configs', 'Graph']))
     ],
 }

@@ -1,0 +1,37 @@
+@use '../../themes/tm';
+
+$file_operations_height: 50px;
+
+.file-operations {
+  width: 100%;
+  height: $file_operations_height;
+
+  @include tm.themeify {
+    .ant-menu {
+      background: transparent;
+      padding: 0 5px;
+
+      &.ant-menu-horizontal {
+        height: $file_operations_height;
+        line-height: $file_operations_height;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.ant-menu-submenu-popup {
+  margin-left: 20px;
+}
+
+.graph-file-item {
+  width: $file_operations_height;
+  height: $file_operations_height;
+  line-height: $file_operations_height;
+  text-align: center;
+  font-size: 10px;
+  padding: 0 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
