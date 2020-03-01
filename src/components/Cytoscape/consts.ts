@@ -2,8 +2,8 @@ export const NODE_NORMAL_SIZE = 40;
 
 export enum CYTO_ENUM {
     CYTO_NODE = 'cyto_node',
-    NEW_NODE_ITEM = 'new_node_item',
-    ADD_NODE_CONNECTING_LINE = 'add-node-connecting-line',
+    CONNECTING_TARGET_NODE = 'connecting_target_node',
+    NODES_CONNECTING_LINE = 'nodes_connecting_line',
 }
 
 export const cytoCommonStyle = [{

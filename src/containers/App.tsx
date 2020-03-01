@@ -5,7 +5,6 @@ import {baseInjectHook, BaseInjectHookProps} from "../utils";
 import './index.scss';
 import i18n from "i18next";
 import TopOperations from "./TopOperations/TopOperations";
-import Index from "../components/Cytoscape";
 import {changeTheme} from "../components/ThemeSelect";
 import {Themes} from "../interfaces/app";
 import FileOperations from "./FileOperations/FileOperations";

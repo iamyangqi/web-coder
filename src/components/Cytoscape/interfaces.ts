@@ -9,6 +9,11 @@ import {
 } from "cytoscape";
 import {CyEdge, CyNode} from "./stores/models";
 
+export interface DataServiceBatchFn {
+    action: string;
+    params: any;
+}
+
 export interface ElementDefinition {
     group?: ElementGroup;
     data?: NodeDataDefinition | EdgeDataDefinition;

@@ -29,24 +29,29 @@ const GraphContextMenu = baseInjectHook((props: GraphContextMenuProps) => {
         items: [{
             key: 'add-connecting-line',
             title: props.t!('Graph:Add Connect Line'),
-            clickCb: addConnectLine,
+            clickCb: addConnectingLine,
         }],
     }
 
     function addNode() {
-        const {x, y} = props.mainStore.uiService;
+        const {x, y} = props.mainStore.uiService.mousePosition;
         props.mainStore.datasService.addNode(new CyNode({
-            position: { x, y }
+            position: { x, y },
+            style: {
+                width: 40,
+                height: 40
+            }
         }));
         nextEventLoop(() => {
             props.mainStore.uiService.setShowContextMenu(false);
         });
     }
 
-    function addConnectLine() {
+    function addConnectingLine() {
         props.mainStore.uiService.setShowContextMenu(false);
+        props.mainStore.eventsService.setConnectingLine(true);
         nextEventLoop(() => {
-            props.mainStore.elementsService.addLine();
+            props.mainStore.drawService.drawConnectingLine();
         })
     }
 
